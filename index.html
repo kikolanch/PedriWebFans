@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedri González | Official Fan Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --barca-red: #A50044;
+            --barca-blue: #004D98;
+            --gold: #EDBB00;
+            --dark: #0a0a0a;
+            --light-gray: #f4f4f4;
+        }
+
+        * { box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--light-gray); color: #333; scroll-behavior: smooth; }
+
+        /* PORTADA CON OVERLAY OSCURO Y TRANSPARENTE */
+        header {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            /* El linear-gradient hace que la imagen se vea más oscura para que el texto se lea bien */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+                        url('imagenes/pedriportadita.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .header-content { z-index: 2; padding: 0 20px; }
+
+        h1 { font-family: 'Oswald', sans-serif; font-size: clamp(3.5rem, 10vw, 7rem); margin: 0; letter-spacing: -2px; text-transform: uppercase; }
+        .hero-sub { font-size: 1.2rem; color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-weight: 700; margin-bottom: 10px; display: block; }
+        .hero-quote { font-style: italic; font-size: 1.3rem; margin-top: 15px; opacity: 0.9; }
+
+        /* NAVEGACIÓN */
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            border-bottom: 3px solid var(--barca-red);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        /* SECCIONES (Manteniendo tu estructura original) */
+        .section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+        .title-block { text-align: center; margin-bottom: 50px; }
+        .title-block h2 { font-family: 'Oswald', sans-serif; font-size: 3rem; text-transform: uppercase; color: var(--barca-blue); }
+        .underline { width: 80px; height: 5px; background: var(--barca-red); margin: 10px auto; }
+
+        .btn-more {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 30px;
+            background-color: var(--barca-blue);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .btn-more:hover {
+            background-color: var(--barca-red);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .history-content { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+        .history-text { flex: 1; min-width: 300px; }
+        .history-img { flex: 1; min-width: 300px; }
+
+        img { max-width: 100%; border-radius: 15px; display: block; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        footer { background: var(--dark); color: white; padding: 40px 20px; text-align: center; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .history-content { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <span class="hero-sub">El Mago de Tenerife</span>
+            <h1>PEDRI GONZÁLEZ</h1>
+            <p class="hero-quote">"Juego para divertirme, como cuando era niño"</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="pedrihistoria.html">Historia</a>
+        <a href="pedriestadisticas.html">Estadísticas</a>
+        <a href="pedripalmares.html">Palmarés</a>
+    </nav>
+
+    <!-- SECCIÓN HISTORIA -->
+    <section id="historia" class="section">
+        <div class="title-block">
+            <h2>Su Historia</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="history-content">
+            <div class="history-text">
+                <h3>De Tegueste al Mundo</h3>
+                <p>Nacido en 2002, Pedro González López se crió en Tenerife bajo la influencia del estilo de juego de Andrés Iniesta. Su ascenso fue meteórico: de la UD Las Palmas al FC Barcelona en apenas un año, convirtiéndose en el pilar del mediocampo culé.</p>
+                <a href="pedrihistoria.html" class="btn-more">Esta es la historia de Pedri →</a>
+            </div>
+            <div class="history-img">
+                <img src="imagenes/pedripalmas.jpg" alt="Pedri Historia">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN ESTADÍSTICAS -->
+    <section id="estadisticas" class="section" style="background: #eef2f5; border-radius: 50px 50px 0 0;">
+        <div class="title-block">
+            <h2>Estadísticas</h2>
+            <div class="underline"></div>
+            <p>Descubre los números actualizados del 8 azulgrana: desde su récord de partidos en 2021 hasta su actual modo "Prime".</p>
+            <a href="pedriestadisticas.html" class="btn-more">Ver estadísticas completas</a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PALMARÉS -->
+    <section id="palmares" class="section">
+        <div class="title-block">
+            <h2>Palmarés</h2>
+            <div class="underline"></div>
+            <p>Desde títulos de liga y copas hasta éxitos internacionales con la selección española y premios individuales como el Golden Boy.</p>
+            <a href="pedripalmares.html" class="btn-more">Explorar vitrina de trofeos</a>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>PEDRI GONZÁLEZ 8</strong></p>
+        <p>Sitio Web Tributo &copy; 2026 | Hecho por fans para fans.</p>
+    </footer>
+
+</body>
+</html>

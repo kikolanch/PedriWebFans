@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palmarés | La Vitrina de Pedri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --barca-red: #A50044;
+            --barca-blue: #004D98;
+            --gold: #EDBB00;
+            --silver: #C0C0C0;
+            --dark: #121212;
+        }
+
+        body { font-family: 'Roboto', sans-serif; margin: 0; background: #0f0f0f; color: #eee; }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('imagenes/campnou-bg.jpg');
+            background-size: cover;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        h1 { font-family: 'Oswald', sans-serif; font-size: 3.5rem; color: var(--gold); text-transform: uppercase; margin: 0; }
+        .subtitle { font-size: 1.2rem; color: #ccc; letter-spacing: 2px; }
+
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+
+        /* Estilo de las tarjetas de trofeos */
+        .trophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+
+        .trophy-card {
+            background: #1e1e1e;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #333;
+        }
+
+        .trophy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(237, 187, 0, 0.2);
+            border-color: var(--gold);
+        }
+
+        .trophy-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .trophy-info { padding: 25px; }
+        .trophy-tag {
+            background: var(--gold);
+            color: black;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .trophy-title { font-family: 'Oswald', sans-serif; font-size: 1.8rem; margin: 15px 0 10px; color: #fff; }
+        .trophy-desc { font-size: 0.95rem; color: #bbb; line-height: 1.6; }
+
+        .back-nav { text-align: center; margin-top: 60px; padding-bottom: 40px; }
+        .btn-back {
+            text-decoration: none;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+        .btn-back:hover { background: var(--gold); color: black; }
+
+        /* Estilos específicos para medallas o premios individuales */
+        .individual { border-color: var(--barca-red); }
+        .individual .trophy-tag { background: var(--barca-red); color: white; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>La Vitrina del 8</h1>
+    <p class="subtitle">Títulos y distinciones de una carrera legendaria</p>
+</header>
+
+<div class="container">
+    <div class="trophy-grid">
+
+        <!-- EUROCOPA 2024 -->
+        <div class="trophy-card">
+            <img src="imagenes/pedrieuro.jpg" alt="Pedri Eurocopa" class="trophy-img">
+            <div class="trophy-info">
+                <span class="trophy-tag">Selección Española</span>
+                <h2 class="trophy-title">Eurocopa 2024</h2>
+                <p class="trophy-desc">El gran éxito internacional. Pedri fue el cerebro que guió a "La Roja" hacia el trono europeo, demostrando que su visión de juego no tiene fronteras.</p>
+            </div>
+        </div>
+
+        <!-- LA LIGA -->
+        <div class="trophy-card">
+            <img src="imagenes/pedriliga1.jpg" alt="Pedri Campeón Liga" class="trophy-img">
+            <div class="trophy-info">
+                <span class="trophy-tag">FC Barcelona</span>
+                <h2 class="trophy-title">La Liga</h2>
+                <p class="trophy-desc">El premio a la regularidad. Pedri ha sido pieza clave en la reconquista del campeonato doméstico, dominando los tiempos en cada partido clave del Camp Nou.</p>
+            </div>
+        </div>
+
+        <!-- GOLDEN BOY -->
+        <div class="trophy-card individual">
+            <img src="imagenes/pedrigoldenboy.jpg" alt="Pedri Golden Boy" class="trophy-img">
+            <div class="trophy-info">
+                <span class="trophy-tag">Premio Individual</span>
+                <h2 class="trophy-title">Golden Boy 2021</h2>
+                <p class="trophy-desc">Reconocido como el mejor jugador sub-21 del mundo. Un galardón que confirmó lo que todos ya sabíamos: estábamos ante un talento generacional único.</p>
+            </div>
+        </div>
+
+        <!-- COPA DEL REY -->
+        <div class="trophy-card">
+            <img src="imagenes/pedricrey.jpg" alt="Pedri Copa del Rey" class="trophy-img">
+            <div class="trophy-info">
+                <span class="trophy-tag">FC Barcelona</span>
+                <h2 class="trophy-title">Copa del Rey</h2>
+                <p class="trophy-desc">Su primer gran título con la camiseta azulgrana. Una competición donde su conexión con Messi dejó jugadas para el recuerdo eterno del barcelonismo.</p>
+            </div>
+        </div>
+
+        <!-- MEDALLA OLÍMPICA -->
+        <div class="trophy-card">
+            <img src="imagenes/pedrimedalla.jpg" alt="Pedri Medalla Olímpica" class="trophy-img">
+            <div class="trophy-info">
+                <span class="trophy-tag">Juegos Olímpicos</span>
+                <h2 class="trophy-title">Plata en Tokyo 2020</h2>
+                <p class="trophy-desc">Tras una temporada agotadora, Pedri lideró al equipo olímpico hasta la final, colgándose una medalla de plata histórica para el deporte español.</p>
+            </div>
+        </div>
+
+        <!-- TROFEO KOPA -->
+        <div class="trophy-card individual">
+            <img src="imagenes/pedritrofeo1.jpg" alt="Pedri Trofeo Kopa" class="trophy-img">
+            <div class="trophy-info">
+                <span class="trophy-tag">Premio Individual</span>
+                <h2 class="trophy-title">Trofeo Kopa</h2>
+                <p class="trophy-desc">Entregado por France Football durante la gala del Balón de Oro, coronándolo como el mejor futbolista joven del planeta en una gala inolvidable.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="back-nav">
+        <a href="index.html" class="btn-back">← Volver al Inicio</a>
+    </div>
+</div>
+
+<footer>
+    <p style="text-align: center; color: #555; padding-bottom: 20px;">&copy; 2026 La Vitrina de Pedri - Colección de Éxitos</p>
+</footer>
+
+</body>
+</html>

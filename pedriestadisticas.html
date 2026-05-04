@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas Detalladas | Pedri González</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --barca-red: #A50044;
+            --barca-blue: #004D98;
+            --gold: #EDBB00;
+            --palmas-yellow: #f7d117;
+            --palmas-blue: #00529f;
+            --dark: #1a1a1a;
+        }
+        body { font-family: 'Roboto', sans-serif; margin: 0; background: #f0f2f5; color: #333; line-height: 1.6; }
+        header { background: var(--dark); color: white; padding: 50px 20px; text-align: center; border-bottom: 4px solid var(--barca-red); }
+        h1 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 40px; }
+
+        h2 { font-family: 'Oswald', sans-serif; color: var(--barca-blue); border-bottom: 2px solid var(--gold); display: inline-block; margin-bottom: 20px; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff; font-size: 0.95rem; }
+        th { background: var(--barca-blue); color: white; padding: 12px; text-align: left; font-weight: 700; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        tr:nth-child(even) { background: #f8f9fa; }
+
+        .img-container { text-align: center; margin: 25px 0; }
+        .img-container img { max-width: 100%; border-radius: 10px; box-shadow: 0 8px 15px rgba(0,0,0,0.2); transition: transform 0.3s; }
+        .img-container img:hover { transform: scale(1.02); }
+        .img-caption { font-style: italic; color: #666; margin-top: 10px; font-size: 0.95rem; }
+
+        .prime-img-box { border: 2px solid var(--gold); padding: 10px; border-radius: 12px; background: linear-gradient(45deg, #fff, #fffcf0); margin-bottom: 25px; }
+        .palmas-img-box { border: 2px solid var(--palmas-yellow); padding: 10px; border-radius: 12px; background: linear-gradient(45deg, #fff, #fefdeb); margin-bottom: 25px; }
+
+        .highlight-text { background: #fff4e5; border-left: 5px solid var(--gold); padding: 15px; margin: 20px 0; font-weight: 500; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--barca-red); font-weight: bold; text-decoration: none; }
+        .prime-badge { background: var(--barca-red); color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; vertical-align: middle; margin-left: 10px; }
+
+        footer { text-align: center; padding: 30px; color: #888; background: white; border-top: 1px solid #ddd; }
+
+        @media (max-width: 600px) {
+            table { font-size: 0.8rem; }
+            th, td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Análisis Estadístico de "El Mago"</h1>
+</header>
+
+<div class="container">
+    <a href="index.html" class="back-link">← Volver al Inicio</a>
+
+    <!-- SECCIÓN LAS PALMAS -->
+    <div class="card" style="border-top: 5px solid var(--palmas-yellow);">
+        <h2>El Inicio: UD Las Palmas (2019/20)</h2>
+        <p>A la temprana edad de 16 años, Pedri no solo debutó en el fútbol profesional, sino que se convirtió en el eje fundamental de la UD Las Palmas. Su capacidad para leer el juego en una categoría tan física como la Segunda División española dejó boquiabiertos a los ojeadores de toda Europa. Fue el jugador que más jugadas de ataque inició en toda la temporada canaria.</p>
+
+        <div class="palmas-img-box">
+            <div class="img-container" style="margin: 0;">
+                <img src="imagenes/pedripalmas2.jpg" alt="Pedri en UD Las Palmas">
+                <p class="img-caption">Sus primeros pasos como profesional en el Estadio de Gran Canaria.</p>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Partidos</th>
+                    <th>Goles</th>
+                    <th>Asistencias</th>
+                    <th>Minutos Jugados</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>37</td><td>4</td><td>7</td><td>2.833'</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECCIÓN 2021 -->
+    <div class="card" style="border-left: 6px solid #ff4444;">
+        <h2>2021: El Año de la Sobreexplotación</h2>
+        <p>Lo vivido en 2021 fue un fenómeno nunca antes visto en un futbolista de su edad. Pedri enlazó la exigencia del FC Barcelona con la Eurocopa (donde fue titular indiscutible y Mejor Jugador Joven) y, sin descanso, voló a Japón para los Juegos Olímpicos. Esta carga hercúlea de minutos fue un regalo para los aficionados, pero un castigo para sus músculos que empezaron a resentirse poco después.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Competición (2020/21)</th>
+                    <th>Partidos</th>
+                    <th>Logro Extra</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Club (Barça)</td><td>52</td><td>Campeón Copa del Rey</td></tr>
+                <tr><td>Selección Absoluta (Euro)</td><td>10</td><td>Mejor Joven / XI Ideal</td></tr>
+                <tr><td>Selección Olímpica</td><td>6</td><td>Medalla de Plata</td></tr>
+                <tr style="background: #ffe6e6; font-weight: bold;"><td>Total Año Natural</td><td>73</td><td>Récord Mundial</td></tr>
+            </tbody>
+        </table>
+
+        <div class="img-container">
+            <img src="imagenes/pedritieso.jpg" alt="Pedri cansado 2021">
+            <p class="img-caption">En esta imagen se puede apreciar el cansancio en los ojos de nuestro 8.</p>
+        </div>
+
+        <p class="highlight-text">
+            Esta acumulación excesiva de esfuerzos hizo que su cuerpo dijera "basta". A partir de aquí, Pedri enfrentó un ciclo de lesiones recurrentes que limitaron su presencia hasta mediados de 2024, afectando especialmente su explosividad muscular.
+        </p>
+    </div>
+
+    <!-- SECCIÓN PRIME 24/25 -->
+    <div class="card">
+        <h2>Temporada Actual 2025/26 <span class="prime-badge">MODO PRIME</span></h2>
+        <p>Tras un meticuloso proceso de recuperación, cambio de dieta y entrenamiento específico de fuerza, el Pedri que vemos hoy es la versión definitiva. Ha recuperado la frescura mental de sus inicios pero con un físico mucho más resistente y potente. Su influencia en el juego ha trascendido: ya no solo distribuye, sino que pisa el área con peligro constante y lidera la presión tras pérdida.</p>
+
+        <div class="prime-img-box">
+            <div class="img-container" style="margin: 0;">
+                <img src="imagenes/pedriprime.jpg" alt="Pedri modo Prime 2026">
+                <p class="img-caption">La plenitud física y mental del mejor mediocampista del mundo.</p>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Competición</th>
+                    <th>Partidos</th>
+                    <th>Goles</th>
+                    <th>Asistencias</th>
+                    <th>% Pases Éxito</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>La Liga</td><td>25</td><td>4</td><td>10</td><td>91.5%</td></tr>
+                <tr><td>UEFA Champions League</td><td>9</td><td>1</td><td>4</td><td>89.0%</td></tr>
+                <tr><td>Selección Española</td><td>10</td><td>2</td><td>3</td><td>93.2%</td></tr>
+            </tbody>
+        </table>
+        <p>Estos números demuestran que, a sus 23 años, Pedri ha alcanzado un "prime" que sigue en ascenso y promete dominar la década.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Estadísticas Oficiales de Pedri González</p>
+</footer>
+
+</body>
+</html>
