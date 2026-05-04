@@ -12,12 +12,13 @@
             --gold: #EDBB00;
             --dark: #0a0a0a;
             --light-gray: #f4f4f4;
+            --blaugrana-gradient: linear-gradient(90deg, var(--barca-blue) 0%, var(--barca-red) 100%);
         }
 
         * { box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--light-gray); color: #333; scroll-behavior: smooth; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--light-gray); color: #333; scroll-behavior: smooth; overflow-x: hidden; }
 
-        /* PORTADA CON OVERLAY OSCURO Y TRANSPARENTE */
+        /* PORTADA CON MOVIMIENTO (PARALLAX + ANIMACIÓN) */
         header {
             height: 100vh;
             position: relative;
@@ -26,21 +27,51 @@
             justify-content: center;
             color: white;
             text-align: center;
-            /* El linear-gradient hace que la imagen se vea más oscura para que el texto se lea bien */
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
                         url('imagenes/pedriportadita.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment: fixed; /* Efecto Parallax */
+            animation: moveBackground 20s infinite alternate ease-in-out; /* Movimiento suave */
+            z-index: 1;
+        }
+
+        @keyframes moveBackground {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
         }
 
         .header-content { z-index: 2; padding: 0 20px; }
 
-        h1 { font-family: 'Oswald', sans-serif; font-size: clamp(3.5rem, 10vw, 7rem); margin: 0; letter-spacing: -2px; text-transform: uppercase; }
-        .hero-sub { font-size: 1.2rem; color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-weight: 700; margin-bottom: 10px; display: block; }
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            margin: 0;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
         .hero-quote { font-style: italic; font-size: 1.3rem; margin-top: 15px; opacity: 0.9; }
 
-        /* NAVEGACIÓN */
+        /* NAVEGACIÓN BLAUGRANA */
         nav {
             background: rgba(10, 10, 10, 0.95);
             padding: 1rem;
@@ -49,7 +80,7 @@
             z-index: 1000;
             display: flex;
             justify-content: center;
-            border-bottom: 3px solid var(--barca-red);
+            border-bottom: 4px solid var(--gold);
         }
 
         nav a {
@@ -60,21 +91,58 @@
             text-transform: uppercase;
             font-size: 0.9rem;
             transition: 0.3s;
+            position: relative;
         }
 
         nav a:hover { color: var(--gold); }
 
-        /* SECCIONES (Manteniendo tu estructura original) */
-        .section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+        /* Línea inferior en hover */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 2px;
+            bottom: -5px; left: 0;
+            background-color: var(--barca-red);
+            transition: 0.3s;
+        }
+        nav a:hover::after { width: 100%; }
+
+        /* SECCIONES */
+        .section { padding: 80px 20px; max-width: 1200px; margin: auto; position: relative; }
+
         .title-block { text-align: center; margin-bottom: 50px; }
         .title-block h2 { font-family: 'Oswald', sans-serif; font-size: 3rem; text-transform: uppercase; color: var(--barca-blue); }
-        .underline { width: 80px; height: 5px; background: var(--barca-red); margin: 10px auto; }
+
+        /* Divisor Blaugrana bajo títulos */
+        .underline {
+            width: 100px;
+            height: 6px;
+            background: var(--blaugrana-gradient);
+            margin: 10px auto;
+            border-radius: 3px;
+        }
+
+        /* ELEMENTOS BLAUGRANAS DE ADORNO AL FINAL DE SECCIONES */
+        .barca-divider {
+            height: 10px;
+            width: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--barca-blue),
+                var(--barca-blue) 50px,
+                var(--barca-red) 50px,
+                var(--barca-red) 100px
+            );
+            margin-top: 40px;
+            opacity: 0.7;
+            border-radius: 5px;
+        }
 
         .btn-more {
             display: inline-block;
             margin-top: 25px;
             padding: 14px 30px;
-            background-color: var(--barca-blue);
+            background: var(--barca-blue);
             color: white;
             text-decoration: none;
             font-weight: bold;
@@ -83,21 +151,42 @@
             text-transform: uppercase;
             font-size: 0.8rem;
             letter-spacing: 1px;
+            border: 2px solid transparent;
         }
 
         .btn-more:hover {
-            background-color: var(--barca-red);
+            background: var(--barca-red);
+            border-color: var(--gold);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(165, 0, 68, 0.4);
         }
 
         .history-content { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
         .history-text { flex: 1; min-width: 300px; }
         .history-img { flex: 1; min-width: 300px; }
 
-        img { max-width: 100%; border-radius: 15px; display: block; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        img { max-width: 100%; border-radius: 15px; display: block; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 3px solid white; }
 
-        footer { background: var(--dark); color: white; padding: 40px 20px; text-align: center; font-size: 0.8rem; }
+        /* PIE DE PÁGINA BLAUGRANA */
+        footer {
+            background: linear-gradient(var(--dark), #1a1a1a);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 5px solid var(--barca-red);
+        }
+
+        .footer-stripes {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .stripe { width: 30px; height: 5px; border-radius: 2px; }
+        .blue-s { background: var(--barca-blue); }
+        .red-s { background: var(--barca-red); }
 
         @media (max-width: 768px) {
             h1 { font-size: 3.5rem; }
@@ -137,10 +226,11 @@
                 <img src="imagenes/pedripalmas.jpg" alt="Pedri Historia">
             </div>
         </div>
+        <div class="barca-divider"></div>
     </section>
 
     <!-- SECCIÓN ESTADÍSTICAS -->
-    <section id="estadisticas" class="section" style="background: #eef2f5; border-radius: 50px 50px 0 0;">
+    <section id="estadisticas" class="section" style="background: #eef2f5; border-radius: 50px 50px 0 0; border-bottom: 5px solid var(--barca-blue);">
         <div class="title-block">
             <h2>Estadísticas</h2>
             <div class="underline"></div>
@@ -157,11 +247,18 @@
             <p>Desde títulos de liga y copas hasta éxitos internacionales con la selección española y premios individuales como el Golden Boy.</p>
             <a href="pedripalmares.html" class="btn-more">Explorar vitrina de trofeos</a>
         </div>
+        <div class="barca-divider" style="background: linear-gradient(90deg, var(--barca-red), var(--barca-blue));"></div>
     </section>
 
     <footer>
+        <div class="footer-stripes">
+            <div class="stripe blue-s"></div>
+            <div class="stripe red-s"></div>
+            <div class="stripe blue-s"></div>
+            <div class="stripe red-s"></div>
+        </div>
         <p><strong>PEDRI GONZÁLEZ 8</strong></p>
-        <p>Sitio Web Tributo &copy; 2026 | Hecho por fans para fans.</p>
+        <p>Sitio Web Tributo &copy; 2026 | Més que un jugador.</p>
     </footer>
 
 </body>
