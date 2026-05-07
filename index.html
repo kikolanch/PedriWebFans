@@ -188,13 +188,88 @@
         .blue-s { background: var(--barca-blue); }
         .red-s { background: var(--barca-red); }
 
+
+
+        /* INTRO CINEMÁTICA */
+        .cinematic-intro {
+            position: fixed;
+            inset: 0;
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(237, 187, 0, 0.2), transparent 45%),
+                radial-gradient(circle at 80% 80%, rgba(0, 77, 152, 0.3), transparent 45%),
+                linear-gradient(135deg, #050505, #111 60%, #1a1a1a);
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+
+        .cinematic-intro.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .intro-content {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            animation: zoomIn 3s ease forwards;
+        }
+
+        .intro-tag {
+            display: block;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .intro-title {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.4rem, 8vw, 5rem);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            animation: titleGlow 2.5s ease-in-out infinite alternate;
+        }
+
+        .intro-sub {
+            margin-top: 14px;
+            font-size: 1rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes titleGlow {
+            from { text-shadow: 0 8px 18px rgba(0,0,0,0.6), 0 0 0 rgba(237, 187, 0, 0); }
+            to { text-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 18px rgba(237, 187, 0, 0.4); }
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 3.5rem; }
             .history-content { flex-direction: column; }
         }
     </style>
 </head>
+
 <body>
+
+    <div id="cinematicIntro" class="cinematic-intro">
+        <div class="intro-content">
+            <span class="intro-tag">Experiencia Fan</span>
+            <h2 class="intro-title">Bienvenidos al universo de Pedri</h2>
+            <p class="intro-sub">Una entrada cinematográfica para sentir el fútbol desde el primer segundo.</p>
+        </div>
+    </div>
 
     <header>
         <div class="header-content">
@@ -260,6 +335,17 @@
         <p><strong>PEDRI GONZÁLEZ 8</strong></p>
         <p>Sitio Web Tributo &copy; 2026 | Més que un jugador.</p>
     </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            const intro = document.getElementById('cinematicIntro');
+            if (!intro) return;
+
+            setTimeout(() => {
+                intro.classList.add('hide');
+            }, 3000);
+        });
+    </script>
 
 </body>
 </html>
