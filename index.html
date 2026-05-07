@@ -254,6 +254,77 @@
             to { text-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 18px rgba(237, 187, 0, 0.4); }
         }
 
+
+
+        .barca-crest {
+            width: 120px;
+            margin: 0 auto 18px;
+            filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.25));
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .showcase-card {
+            background: white;
+            padding: 28px;
+            border-radius: 20px;
+            border-top: 6px solid var(--barca-blue);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showcase-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,77,152,0.06), rgba(165,0,68,0.06));
+            pointer-events: none;
+        }
+
+        .showcase-card h3 {
+            margin-top: 0;
+            font-family: 'Oswald', sans-serif;
+            color: var(--barca-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .showcase-card ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .showcase-card strong {
+            color: var(--barca-red);
+        }
+
+        .stats-highlight {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 18px;
+            position: relative;
+        }
+
+        .stat-pill {
+            background: var(--blaugrana-gradient);
+            color: white;
+            border-radius: 999px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: .4px;
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 3.5rem; }
             .history-content { flex-direction: column; }
@@ -274,6 +345,19 @@
     <header>
         <div class="header-content">
             <span class="hero-sub">El Mago de Tenerife</span>
+            <svg class="barca-crest" viewBox="0 0 120 140" aria-label="Escudo blaugrana inspirado en el FC Barcelona" role="img">
+                <path d="M10 10h100v56c0 36-22 57-50 64C32 123 10 102 10 66Z" fill="#004D98" stroke="#EDBB00" stroke-width="6"/>
+                <path d="M16 16h88v23H16z" fill="#A50044"/>
+                <path d="M16 45h88v79H16z" fill="url(#stripes)"/>
+                <path d="M43 16v23M77 16v23M16 27h88" stroke="#EDBB00" stroke-width="4"/>
+                <text x="60" y="86" text-anchor="middle" fill="#EDBB00" font-family="Oswald, sans-serif" font-size="26" font-weight="700">FCB</text>
+                <defs>
+                    <pattern id="stripes" width="18" height="18" patternUnits="userSpaceOnUse">
+                        <rect width="9" height="18" fill="#A50044"/>
+                        <rect x="9" width="9" height="18" fill="#004D98"/>
+                    </pattern>
+                </defs>
+            </svg>
             <h1>PEDRI GONZÁLEZ</h1>
             <p class="hero-quote">"Juego para divertirme, como cuando era niño"</p>
         </div>
@@ -309,8 +393,30 @@
         <div class="title-block">
             <h2>Estadísticas</h2>
             <div class="underline"></div>
-            <p>Descubre los números actualizados del 8 azulgrana: desde su récord de partidos en 2021 hasta su actual modo "Prime".</p>
-            <a href="pedriestadisticas.html" class="btn-more">Ver estadísticas completas</a>
+            <p>Una visión premium del rendimiento del 8 blaugrana: impacto, regularidad y liderazgo en el centro del campo.</p>
+        </div>
+        <div class="showcase-grid">
+            <article class="showcase-card">
+                <h3>Impacto en juego</h3>
+                <ul>
+                    <li><strong>Visión</strong> para acelerar transiciones.</li>
+                    <li><strong>Precisión</strong> en pases entre líneas.</li>
+                    <li><strong>Control</strong> del ritmo competitivo.</li>
+                </ul>
+                <div class="stats-highlight">
+                    <span class="stat-pill">Creatividad élite</span>
+                    <span class="stat-pill">Ritmo de partido</span>
+                </div>
+            </article>
+            <article class="showcase-card" style="border-top-color: var(--barca-red);">
+                <h3>Regularidad 2026</h3>
+                <ul>
+                    <li>Participación constante en encuentros clave.</li>
+                    <li>Madurez táctica en escenarios de máxima presión.</li>
+                    <li>Lectura defensiva cada vez más completa.</li>
+                </ul>
+                <a href="pedriestadisticas.html" class="btn-more">Ver estadísticas completas</a>
+            </article>
         </div>
     </section>
 
@@ -319,8 +425,26 @@
         <div class="title-block">
             <h2>Palmarés</h2>
             <div class="underline"></div>
-            <p>Desde títulos de liga y copas hasta éxitos internacionales con la selección española y premios individuales como el Golden Boy.</p>
-            <a href="pedripalmares.html" class="btn-more">Explorar vitrina de trofeos</a>
+            <p>Una vitrina de prestigio con títulos colectivos y reconocimientos individuales que consolidan su legado.</p>
+        </div>
+        <div class="showcase-grid">
+            <article class="showcase-card">
+                <h3>Títulos destacados</h3>
+                <ul>
+                    <li>Competiciones nacionales con el FC Barcelona.</li>
+                    <li>Éxitos con la selección española absoluta y olímpica.</li>
+                    <li>Participación protagonista en finales decisivas.</li>
+                </ul>
+            </article>
+            <article class="showcase-card" style="border-top-color: var(--gold);">
+                <h3>Premios individuales</h3>
+                <ul>
+                    <li>Golden Boy y premios al mejor joven europeo.</li>
+                    <li>Reconocimiento internacional por rendimiento y proyección.</li>
+                    <li>Figura referencia de la nueva generación culé.</li>
+                </ul>
+                <a href="pedripalmares.html" class="btn-more">Explorar vitrina de trofeos</a>
+            </article>
         </div>
         <div class="barca-divider" style="background: linear-gradient(90deg, var(--barca-red), var(--barca-blue));"></div>
     </section>
